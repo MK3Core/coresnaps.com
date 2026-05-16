@@ -1,4 +1,4 @@
-# coresnaps.com — Product Requirement Document
+# coresnaps.com Product Requirement Document
 
 **Owner:** Alex Core, Product Manager  
 **Status:** Active development  
