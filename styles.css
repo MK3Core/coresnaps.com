@@ -101,7 +101,7 @@
      ======================================================================== */
   
   .chapters {
-    padding-bottom: clamp(60px, 8vw, 96px);
+    padding-bottom: clamp(20px, 2.5vw, 32px);
     position: relative;
     --zone-h: calc((clamp(160px, 20vw, 220px) + 240px) / 4);
   }
@@ -301,7 +301,7 @@
      ======================================================================== */
   
   .site-footer {
-    padding: clamp(32px, 4vw, 48px) 0 28px;
+    padding: clamp(20px, 2.5vw, 28px) 0 28px;
     display: flex;
     flex-direction: column;
     gap: 18px;
