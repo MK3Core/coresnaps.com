@@ -301,7 +301,6 @@
      ======================================================================== */
   
   .site-footer {
-    border-top: 1px solid var(--border);
     padding: clamp(32px, 4vw, 48px) 0 28px;
     display: flex;
     flex-direction: column;
@@ -479,8 +478,7 @@
   
   .footer-colophon {
     margin-top: 14px;
-    padding-top: 18px;
-    border-top: 1px dashed var(--border);
+    padding-top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
