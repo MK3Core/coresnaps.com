@@ -38,57 +38,56 @@
           <span class="core">core</span><span class="snaps">snaps</span><span class="tld">.com</span>
         </span>
       </h1>
-      <p>
-        Product manager and cybersecurity dork with a design obsession, a motorsport habit, a camera, and too many side projects.
-      </p>
     </section>
 
     <!-- CHAPTERS -->
     <nav class="chapters" aria-label="Sections">
 
-      <a class="chapter" data-ch="01" href="#about">
+      <!-- Invisible zones: Y position maps to the card, solving hover dead zones -->
+      <a class="pile-zone" data-zone="01" href="#about" aria-label="Ethos"></a>
+      <a class="pile-zone" data-zone="02" href="work.html" aria-label="Professional"></a>
+      <a class="pile-zone" data-zone="03" href="photography.html" aria-label="Photography"></a>
+      <a class="pile-zone" data-zone="04" href="projects.html" aria-label="Side Projects"></a>
+
+      <a class="chapter" data-ch="01" href="#about" tabindex="-1" aria-hidden="true">
         <div class="chapter-img" aria-hidden="true"></div>
         <div class="chapter-label">
           <div class="chapter-label-main">
             <span class="chapter-num"><span class="br">[</span>01<span class="br">]</span></span>
             <span class="chapter-title">Ethos</span>
-            <span class="chapter-sub">Who I am, what I&apos;m made of, what I&apos;m up to.</span>
           </div>
           <div class="chapter-arrow" aria-hidden="true">&rarr;</div>
         </div>
       </a>
 
-      <a class="chapter" data-ch="02" href="work.html">
+      <a class="chapter" data-ch="02" href="work.html" tabindex="-1" aria-hidden="true">
         <div class="chapter-img" aria-hidden="true"></div>
         <div class="chapter-label">
           <div class="chapter-label-main">
             <span class="chapter-num"><span class="br">[</span>02<span class="br">]</span></span>
             <span class="chapter-title">Professional</span>
-            <span class="chapter-sub">Twelve years of platform &amp; systems engineering. CV available.</span>
           </div>
           <div class="chapter-arrow" aria-hidden="true">&rarr;</div>
         </div>
       </a>
 
-      <a class="chapter" data-ch="03" href="photography.html">
+      <a class="chapter" data-ch="03" href="photography.html" tabindex="-1" aria-hidden="true">
         <div class="chapter-img" aria-hidden="true"></div>
         <div class="chapter-label">
           <div class="chapter-label-main">
             <span class="chapter-num"><span class="br">[</span>03<span class="br">]</span></span>
             <span class="chapter-title">Photography</span>
-            <span class="chapter-sub">Motorsport, mostly. The full archive lives on Flickr.</span>
           </div>
           <div class="chapter-arrow" aria-hidden="true">&rarr;</div>
         </div>
       </a>
 
-      <a class="chapter" data-ch="04" href="projects.html">
+      <a class="chapter" data-ch="04" href="projects.html" tabindex="-1" aria-hidden="true">
         <div class="chapter-img" aria-hidden="true"></div>
         <div class="chapter-label">
           <div class="chapter-label-main">
             <span class="chapter-num"><span class="br">[</span>04<span class="br">]</span></span>
             <span class="chapter-title">Side Projects</span>
-            <span class="chapter-sub">Race Calibre, a self-hosted Matrix server, and a few smaller things.</span>
           </div>
           <div class="chapter-arrow" aria-hidden="true">&rarr;</div>
         </div>
@@ -155,7 +154,7 @@
 
       <div class="footer-colophon">
         <span>&copy; <b>Core</b> &middot; 2026</span>
-        <span>Hand-built &middot; <a href="https://github.com/MK3Core" target="_blank" rel="noopener">@MK3Core</a></span>
+        <span>HAND-ROLLED &middot; <a href="https://github.com/MK3Core" target="_blank" rel="noopener">@MK3Core</a></span>
       </div>
     </footer>
 
