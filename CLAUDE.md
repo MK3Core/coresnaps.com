@@ -4,15 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Static HTML/CSS personal portfolio for coresnaps.com, hosted on GitHub Pages. No build system, no JavaScript, no dependencies — just `index.html`, `styles.css`, and `favicon.svg`.
+Static HTML/CSS personal portfolio for coresnaps.com, hosted on GitHub Pages. No build system, no JavaScript, no dependencies — just `index.html`, `styles.css`, `about.css`, and `favicon.svg`.
 
 Changes go live by pushing to `main`. The `CNAME` file pins the custom domain.
 
 ## Architecture
 
-`index.html` is the landing page. It links to four chapter pages (`about.html`, `work.html`, `photography.html`, `projects.html`) that do not yet exist in the repo — they are placeholders in the nav.
+`index.html` is the landing page. The Ethos chapter is an inline CSS-only overlay (triggered by `#about` hash, styled in `about.css`). The remaining chapter pages (`work.html`, `photography.html`, `projects.html`) do not yet exist — they are placeholders in the nav.
 
-All styling lives in `styles.css`. There is no component system; layout and theming use CSS custom properties defined in `:root`.
+All styling lives in `styles.css`, with page-overlay styles in `about.css`. There is no component system; layout and theming use CSS custom properties defined in `:root`.
 
 ## Design system
 
