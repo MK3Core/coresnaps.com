@@ -28,7 +28,7 @@ The problem this project solves is twofold:
 | Goal | Description |
 |---|---|
 | Authentic presence | A site that sounds and feels like a person, not a brand |
-| Zero dependencies | No frameworks, no build step, no JavaScript |
+| Zero dependencies | No frameworks, no build step, minimal scripting |
 | Craft as signal | The implementation demonstrates taste and capability on its own |
 | Long-term maintainability | Push to `main`, it's live. No toolchain to rot. |
 | Privacy by default | No third-party tracking, no embedded scripts beyond fonts |
@@ -41,7 +41,7 @@ This is a personal site, not a product with a funnel. Success looks like:
 
 - Someone visits and gets an accurate read on who Alex is within the first 10 seconds
 - The site holds up to scrutiny from designers, engineers, and product people, the three audiences most likely to inspect the source
-- Zero JavaScript in the final output (verified by browser devtools)
+- Minimal scripting: only a small keyboard handler (ESC to close overlays); all visual interactivity is pure CSS
 - Passes Core Web Vitals without optimization heroics, a natural result of serving static HTML/CSS
 
 ---
@@ -146,7 +146,7 @@ Hovering a dead social reveals a tooltip with an inline SVG skull and the word "
 
 | Constraint | Reason |
 |---|---|
-| No JavaScript | Intentional. Interactivity via pure CSS demonstrates craft and removes an entire class of security and maintenance risk. |
+| Minimal scripting | One small keyboard handler (ESC key). All visual interactivity is pure CSS. No frameworks, no dependencies. |
 | No build system | Push to `main` equals deployed. No toolchain to maintain or rot. |
 | No npm / node_modules | Zero dependency surface. |
 | Static HTML/CSS only | GitHub Pages compatible. Loads instantly. Survives indefinitely. |
@@ -186,7 +186,7 @@ Hovering a dead social reveals a tooltip with an inline SVG skull and the word "
 
 - Analytics or visitor tracking of any kind
 - CMS or admin interface
-- JavaScript of any kind, including progressive enhancement
+- JavaScript frameworks, libraries, or build-time scripting
 - Dark/light mode toggle (dark is the design; there is no light mode)
 - Comments, contact forms, or any server-side processing
 - Social media embeds

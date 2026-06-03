@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="chapter.css" />
 </head>
 <body>
 
@@ -41,23 +41,23 @@
     <nav class="chapters" aria-label="Sections">
 
       <!-- Invisible zones: Y position maps to the card, solving hover dead zones -->
-      <a class="pile-zone" data-zone="01" href="#about" aria-label="Ethos"></a>
-      <a class="pile-zone" data-zone="02" href="work.html" aria-label="Professional"></a>
-      <a class="pile-zone" data-zone="03" href="photography.html" aria-label="Photography"></a>
-      <a class="pile-zone" data-zone="04" href="projects.html" aria-label="Side Projects"></a>
+      <a class="pile-zone" data-zone="01" href="#about" aria-label="About"></a>
+      <a class="pile-zone" data-zone="02" href="#work" aria-label="Professional"></a>
+      <a class="pile-zone" data-zone="03" href="#photography" aria-label="Photography"></a>
+      <a class="pile-zone" data-zone="04" href="#projects" aria-label="Side Projects"></a>
 
       <a class="chapter" data-ch="01" href="#about" tabindex="-1" aria-hidden="true">
         <div class="chapter-img" aria-hidden="true"></div>
         <div class="chapter-label">
           <div class="chapter-label-main">
             <span class="chapter-num"><span class="br">[</span>01<span class="br">]</span></span>
-            <span class="chapter-title">Ethos</span>
+            <span class="chapter-title">About</span>
           </div>
           <div class="chapter-arrow" aria-hidden="true">&rarr;</div>
         </div>
       </a>
 
-      <a class="chapter" data-ch="02" href="work.html" tabindex="-1" aria-hidden="true">
+      <a class="chapter" data-ch="02" href="#work" tabindex="-1" aria-hidden="true">
         <div class="chapter-img" aria-hidden="true"></div>
         <div class="chapter-label">
           <div class="chapter-label-main">
@@ -68,7 +68,7 @@
         </div>
       </a>
 
-      <a class="chapter" data-ch="03" href="photography.html" tabindex="-1" aria-hidden="true">
+      <a class="chapter" data-ch="03" href="#photography" tabindex="-1" aria-hidden="true">
         <div class="chapter-img" aria-hidden="true"></div>
         <div class="chapter-label">
           <div class="chapter-label-main">
@@ -79,7 +79,7 @@
         </div>
       </a>
 
-      <a class="chapter" data-ch="04" href="projects.html" tabindex="-1" aria-hidden="true">
+      <a class="chapter" data-ch="04" href="#projects" tabindex="-1" aria-hidden="true">
         <div class="chapter-img" aria-hidden="true"></div>
         <div class="chapter-label">
           <div class="chapter-label-main">
@@ -164,93 +164,175 @@
   </div>
 
 
-  <!-- ABOUT OVERLAY — triggered by #about hash, closed by href="#" -->
-  <div id="about" class="about-overlay" role="dialog" aria-modal="true" aria-label="Ethos">
-    <a href="#" class="about-backdrop" tabindex="-1" aria-hidden="true"></a>
-    <div class="about-sheet">
 
-      <nav class="about-nav">
-        <div class="container">
-          <div class="about-nav-inner">
-            <a class="about-nav-back" href="#">&#8592; Close</a>
-            <span class="about-nav-label"><span class="br">[</span>01<span class="br">]</span>&nbsp;Ethos</span>
-          </div>
+  <!-- ABOUT -->
+  <div id="about" class="ch-overlay" role="dialog" aria-modal="true" aria-label="About">
+    <a href="#" class="ch-backdrop" tabindex="-1" aria-hidden="true"></a>
+    <div class="ch-panel">
+      <div class="ch-panel-header">
+        <span class="ch-label"><span class="br">[</span>01<span class="br">]</span>&nbsp;About</span>
+        <a class="ch-panel-close" href="#">&#8592; Close</a>
+      </div>
+      <div class="ch-panel-body">
+        <h1 class="ch-title">About</h1>
+        <div class="about-lead">
+          <p>Got into IT young, the hard way: keylogging my teachers&apos; passwords until the school district decided hiring me was easier than suspending me. Did a stint behind a bar and managing restaurants, a la Geeky <em>Cocktail</em>. Product manager for the last eight years.</p>
+          <p>I care about the craft of building. Intent over precision, outcomes over process. The best products sit where form and function stop competing and start reinforcing each other: technically sharper for the user and still a delight to use. Simple where complexity would just be showing off.</p>
+          <p>Outside of work: Father, husband, car guy, photographer, tech tinkerer.</p>
+          <p>I replace corporate infrastructure with self-hosted alternatives where I can, and I&apos;m slowly reducing dependence on the data pipelines that come bundled with most consumer products. Not from paranoia, but from a belief that the defaults are trade-offs you never consciously agreed to. Fewer data sources handed over by default, more ownership over what matters.</p>
         </div>
-      </nav>
-
-      <main class="about-main">
-        <div class="container">
-
-          <section class="about-hero">
-            <div class="about-hero-eyebrow">
-              <span class="about-marker-num"><span class="br">[</span>01<span class="br">]</span></span>
-              <span class="about-eyebrow-line" aria-hidden="true"></span>
-            </div>
-            <h1 class="about-hero-title">Ethos</h1>
-            <p class="about-hero-body">
-              Some of my most impactful early lessons were about intent over precision. Initially the story you&apos;re writing matters most, not the spelling of the words. Precision follows with refinement and time. I care about outcomes over process, and <span class="about-hero-gold">I&apos;ve never bought into the idea that form and function are in competition. The best things sit where they resolve</span>: technically and functionally sharper for the user, and still a delight to use. Simple where complexity would just be showing off.
-            </p>
-          </section>
-
-          <section class="about-section" aria-labelledby="ol-crossroads-heading">
-            <header class="about-section-header">
-              <span class="about-section-num"><span class="br">[</span>02<span class="br">]</span></span>
-              <h2 id="ol-crossroads-heading" class="about-section-title">The crossroads</h2>
-            </header>
-            <div class="crossroads-grid">
-              <div class="crossroads-tile">
-                <span class="tile-label">Design /</span>
-                <h3 class="tile-title">Obsessed with craft</h3>
-                <p class="tile-body">Cares deeply about how things look, feel, and work. Great design isn&apos;t decoration &mdash; it&apos;s what separates tools people love from tools people tolerate.</p>
-              </div>
-              <div class="crossroads-tile">
-                <span class="tile-label">Product /</span>
-                <h3 class="tile-title">Building things that matter</h3>
-                <p class="tile-body">Twelve years of platform and systems engineering, now driving products. The jump from making to making decisions about making.</p>
-              </div>
-              <div class="crossroads-tile">
-                <span class="tile-label">Photography /</span>
-                <h3 class="tile-title">Seeing the frame</h3>
-                <p class="tile-body">Motorsport, mostly. The patience to wait for the moment, then not miss it.</p>
-              </div>
-              <div class="crossroads-tile">
-                <span class="tile-label">Motorsport /</span>
-                <h3 class="tile-title">Cars as a language</h3>
-                <p class="tile-body">Not just a spectator. The mechanical, the tactical, the impossibly fine margins.</p>
-              </div>
-              <div class="crossroads-tile crossroads-tile--wide">
-                <span class="tile-label">Security /</span>
-                <div class="tile-wide-content">
-                  <h3 class="tile-title">The paranoid optimist</h3>
-                  <p class="tile-body">Privacy-conscious, self-hosted, always asking what happens when things go wrong.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="about-section about-prose" aria-labelledby="ol-prose-heading">
-            <header class="about-section-header">
-              <span class="about-section-num"><span class="br">[</span>03<span class="br">]</span></span>
-              <h2 id="ol-prose-heading" class="about-section-title">In my own words</h2>
-            </header>
-            <div class="about-prose-body">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
-            </div>
-          </section>
-
-          <footer class="site-footer about-footer">
-            <div class="footer-colophon">
-              <span>&copy; <b>Core</b> &middot; 2026</span>
-              <a href="#">&larr; Close</a>
-            </div>
-          </footer>
-
-        </div>
-      </main>
+      </div>
     </div>
   </div>
 
+  <!-- PROFESSIONAL -->
+  <div id="work" class="ch-overlay" role="dialog" aria-modal="true" aria-label="Professional">
+    <a href="#" class="ch-backdrop" tabindex="-1" aria-hidden="true"></a>
+    <div class="ch-panel">
+      <div class="ch-panel-header">
+        <span class="ch-label"><span class="br">[</span>02<span class="br">]</span>&nbsp;Professional</span>
+        <a class="ch-panel-close" href="#">&#8592; Close</a>
+      </div>
+      <div class="ch-panel-body">
+        <h1 class="ch-title">Professional</h1>
+        <a class="resume-cta" href="resume.pdf" target="_blank" rel="noopener">&#8599; Download resume</a>
+        <section class="ch-section">
+          <div class="ch-section-header">
+            <span class="ch-section-num"><span class="br">[</span>01<span class="br">]</span></span>
+            <h2 class="ch-section-title">Experience</h2>
+          </div>
+          <div class="work-entries">
+            <div class="work-entry">
+              <div class="work-period">[ period ]</div>
+              <div>
+                <div class="work-role">[ role ]</div>
+                <div class="work-company">[ company ]</div>
+                <p class="work-desc">[ description ]</p>
+              </div>
+            </div>
+            <div class="work-entry">
+              <div class="work-period">[ period ]</div>
+              <div>
+                <div class="work-role">[ role ]</div>
+                <div class="work-company">[ company ]</div>
+                <p class="work-desc">[ description ]</p>
+              </div>
+            </div>
+            <div class="work-entry">
+              <div class="work-period">[ period ]</div>
+              <div>
+                <div class="work-role">[ role ]</div>
+                <div class="work-company">[ company ]</div>
+                <p class="work-desc">[ description ]</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTOGRAPHY -->
+  <div id="photography" class="ch-overlay" role="dialog" aria-modal="true" aria-label="Photography">
+    <a href="#" class="ch-backdrop" tabindex="-1" aria-hidden="true"></a>
+    <div class="ch-panel">
+      <div class="ch-panel-header">
+        <span class="ch-label"><span class="br">[</span>03<span class="br">]</span>&nbsp;Photography</span>
+        <a class="ch-panel-close" href="#">&#8592; Close</a>
+      </div>
+      <div class="ch-panel-body">
+        <h1 class="ch-title">Photography</h1>
+        <div class="photo-grid">
+          <a class="photo-grid-item" href="#photo-1" aria-label="Open photo 1"></a>
+          <a class="photo-grid-item" href="#photo-2" aria-label="Open photo 2"></a>
+          <a class="photo-grid-item" href="#photo-3" aria-label="Open photo 3"></a>
+          <a class="photo-grid-item" href="#photo-4" aria-label="Open photo 4"></a>
+          <a class="photo-grid-item" href="#photo-5" aria-label="Open photo 5"></a>
+          <a class="photo-grid-item" href="#photo-6" aria-label="Open photo 6"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO LIGHTBOXES — close links return to #photography panel -->
+  <div id="photo-1" class="photo-lightbox" role="dialog" aria-modal="true">
+    <a href="#photography" class="photo-lightbox-backdrop" aria-hidden="true"></a>
+    <a href="#photography" class="photo-lightbox-close">&#8592; Back</a>
+    <img src="" alt="" />
+  </div>
+  <div id="photo-2" class="photo-lightbox" role="dialog" aria-modal="true">
+    <a href="#photography" class="photo-lightbox-backdrop" aria-hidden="true"></a>
+    <a href="#photography" class="photo-lightbox-close">&#8592; Back</a>
+    <img src="" alt="" />
+  </div>
+  <div id="photo-3" class="photo-lightbox" role="dialog" aria-modal="true">
+    <a href="#photography" class="photo-lightbox-backdrop" aria-hidden="true"></a>
+    <a href="#photography" class="photo-lightbox-close">&#8592; Back</a>
+    <img src="" alt="" />
+  </div>
+  <div id="photo-4" class="photo-lightbox" role="dialog" aria-modal="true">
+    <a href="#photography" class="photo-lightbox-backdrop" aria-hidden="true"></a>
+    <a href="#photography" class="photo-lightbox-close">&#8592; Back</a>
+    <img src="" alt="" />
+  </div>
+  <div id="photo-5" class="photo-lightbox" role="dialog" aria-modal="true">
+    <a href="#photography" class="photo-lightbox-backdrop" aria-hidden="true"></a>
+    <a href="#photography" class="photo-lightbox-close">&#8592; Back</a>
+    <img src="" alt="" />
+  </div>
+  <div id="photo-6" class="photo-lightbox" role="dialog" aria-modal="true">
+    <a href="#photography" class="photo-lightbox-backdrop" aria-hidden="true"></a>
+    <a href="#photography" class="photo-lightbox-close">&#8592; Back</a>
+    <img src="" alt="" />
+  </div>
+
+  <!-- SIDE PROJECTS -->
+  <div id="projects" class="ch-overlay" role="dialog" aria-modal="true" aria-label="Side Projects">
+    <a href="#" class="ch-backdrop" tabindex="-1" aria-hidden="true"></a>
+    <div class="ch-panel">
+      <div class="ch-panel-header">
+        <span class="ch-label"><span class="br">[</span>04<span class="br">]</span>&nbsp;Side Projects</span>
+        <a class="ch-panel-close" href="#">&#8592; Close</a>
+      </div>
+      <div class="ch-panel-body">
+        <h1 class="ch-title">Side Projects</h1>
+        <section class="ch-section">
+          <div class="ch-section-header">
+            <span class="ch-section-num"><span class="br">[</span>01<span class="br">]</span></span>
+            <h2 class="ch-section-title">Infrastructure</h2>
+          </div>
+          <div class="project-grid">
+            <div class="project-card">
+              <span class="project-tag">Self-hosted /</span>
+              <h3 class="project-name">Matrix &amp; Element</h3>
+              <p class="project-desc">Running a self-hosted Matrix homeserver at chat.coresnaps.com with Element as the client. Federated, end-to-end encrypted, no third-party relay.</p>
+            </div>
+            <div class="project-card">
+              <span class="project-tag">Privacy /</span>
+              <h3 class="project-name">Home server</h3>
+              <p class="project-desc">A home server stack built around privacy by default. DNS filtering, VPN routing, self-hosted services, and a network architecture that assumes everything is hostile.</p>
+            </div>
+            <div class="project-card">
+              <span class="project-tag">Mobile /</span>
+              <h3 class="project-name">Privacy phone setup</h3>
+              <p class="project-desc">A de-Googled Android configuration using GrapheneOS. App selection, network policy, and hardening decisions documented for reproducibility.</p>
+            </div>
+            <div class="project-card">
+              <span class="project-tag">This site /</span>
+              <h3 class="project-name">coresnaps.com</h3>
+              <p class="project-desc">Static HTML and CSS, no build system, minimal scripting. Hosted on GitHub Pages. The pile navigation is pure CSS; a small keyboard handler covers ESC to close overlays.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.key !== 'Escape' || !location.hash) return;
+      location.hash = /^#photo-\d+$/.test(location.hash) ? 'photography' : '';
+    });
+  </script>
 </body>
 </html>
