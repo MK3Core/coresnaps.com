@@ -22,7 +22,7 @@ All styling lives in `styles.css` (site-wide) and `chapter.css` (overlay panels,
 
 ## Design system
 
-- **Palette:** near-black background (`#0a0a0a`), off-white text (`#e8e6e1`), bronze accent (`#C4973A` / `--bronze`), bright bronze (`#d9ad4b` / `--bronze-bright`)
+- **Palette:** near-black background (`#09090b`), off-white text (`#fafaf9`), indigo accent (`#6366f1` / `--accent`), bright indigo (`#818cf8` / `--accent-bright`)
 - **Fonts:** Geist (sans) and Geist Mono, loaded from Google Fonts; fall back to system fonts
 - **Numbering:** sections use `[XX]` bracket notation rendered in `var(--font-mono)`; brackets themselves use `--muted`, numbers use `--bronze`
 - **Minimal scripting:** one inline `<script>` in `index.html` handles ESC key to close overlays/lightbox. All visual interactivity (hover effects, overlays, tooltips, skull glitch, photo lightbox) is pure CSS

@@ -163,12 +163,15 @@ Hovering a dead social reveals a tooltip with an inline SVG skull and the word "
 
 | Token | Value | Use |
 |---|---|---|
-| `--bg` | `#0a0a0a` | Page background |
-| `--fg` | `#e8e6e1` | Primary text |
-| `--bronze` | `#C4973A` | Accent, active states, emphasis |
-| `--bronze-bright` | `#d9ad4b` | Hover highlight on bronze elements |
-| `--muted` | (CSS var) | Secondary text, bracket glyphs |
-| `--border` | (CSS var) | Card and section borders |
+| `--bg` | `#09090b` | Page background |
+| `--fg` | `#fafaf9` | Primary text |
+| `--fg-dim` | `#a1a1aa` | Secondary text |
+| `--accent` | `#6366f1` | Accent, active states, emphasis |
+| `--accent-bright` | `#818cf8` | Hover highlight on accent elements |
+| `--muted` | `#52525b` | Tertiary text, bracket glyphs |
+| `--muted-2` | `#3f3f46` | Subtle borders, decorative elements |
+| `--border` | `rgba(250,250,249,0.07)` | Card and section borders |
+| `--border-strong` | `rgba(250,250,249,0.14)` | Elevated or active borders |
 
 **Typography**
 
@@ -178,7 +181,7 @@ Hovering a dead social reveals a tooltip with an inline SVG skull and the word "
 
 **Principles**
 
-- Bronze is used sparingly. Emphasis only, not decoration.
+- Indigo accent is used sparingly. Emphasis only, not decoration.
 - Every element must justify its presence
 - Simple over complex; complexity earns its place
 - Form and function are not in competition. The best results sit where they resolve.
