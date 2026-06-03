@@ -74,10 +74,10 @@ Four content chapters presented as a stacked pile of banner cards. On page load 
 
 | ID | Title | Status |
 |---|---|---|
-| `[01]` | Ethos | Built |
-| `[02]` | Professional | Placeholder |
-| `[03]` | Photography | Placeholder |
-| `[04]` | Side Projects | Placeholder |
+| `[01]` | About | Built — needs no additional structure |
+| `[02]` | Professional | Built — needs resume content |
+| `[03]` | Photography | Built — needs photos |
+| `[04]` | Side Projects | Built |
 
 **Pile mechanics:**
 
@@ -88,28 +88,31 @@ Four content chapters presented as a stacked pile of banner cards. On page load 
 
 **The hover dead-zone problem (and how it's solved):**
 
-When a lower card lifts upward, it physically covers the hover tab of cards above it, making them unreachable. This is solved with invisible overlay `<a>` elements (`.pile-zone`) that divide the full pile height into four equal Y-position bands. Mouse position in the pile always maps to the correct card regardless of visual stacking. Cards have `pointer-events: none`; the zones are the actual navigation and interaction surface. Pure CSS, no JavaScript.
+When a lower card lifts upward, it physically covers the hover tab of cards above it, making them unreachable. This is solved with invisible overlay `<a>` elements (`.pile-zone`) that divide the full pile height into four equal Y-position bands. Mouse position in the pile always maps to the correct card regardless of visual stacking. Cards have `pointer-events: none`; the zones are the actual navigation and interaction surface. Pure CSS.
 
 ---
 
-### `[F-03]` Ethos overlay
+### `[F-03]` Chapter overlay panels
 
-The `[01] Ethos` chapter opens as a CSS-only slide-up sheet overlay, triggered by the `#about` URL hash. No JavaScript. Closed by clicking the backdrop or any close link.
+Each chapter opens as a CSS `:target` panel triggered by hash navigation. No page load, no JavaScript routing.
 
-**Contents:**
+| Chapter | Hash | Contents |
+|---|---|---|
+| About | `#about` | Bio |
+| Professional | `#work` | Resume download CTA + work history entries |
+| Photography | `#photography` | 2-column photo grid with full-screen lightbox |
+| Side Projects | `#projects` | Project cards: Matrix server, home server, privacy phone, this site |
 
-| Section | Description |
-|---|---|
-| `[01]` Hero | Mission statement: Alex's ethos on craft, intent, and form vs. function |
-| `[02]` The crossroads | Tile grid across Design, Product, Photography, Motorsport, Security |
-| `[03]` In my own words | Long-form prose section (placeholder, to be written) |
+**Panel behavior:**
 
-**Sheet behavior:**
+- `min(900px, 100vw - gutter)` wide, `88vh` tall, centered over a blurred backdrop
+- Scrollable body, sticky header with chapter label and close link
+- Opened by clicking a chapter card; closed by clicking the backdrop, the close link, or pressing ESC
+- CSS-only: `:target` pseudo-class drives all show/hide logic; ESC is handled by a small inline script (the only JavaScript on the site)
 
-- Slides up from the bottom, 90vh tall
-- Constrained to 1080px max-width, centered, a floating panel not a full-screen takeover
-- Backdrop blurs and dims the page behind it
-- Sticky top nav with close control and section label
+**Photography lightbox:**
+
+Clicking a photo in the grid navigates to `#photo-N`, opening a fullscreen lightbox above the panel. Clicking the backdrop or pressing ESC returns to `#photography`.
 
 ---
 
@@ -128,7 +131,7 @@ Active and dead social links in the footer, rendered as a clean row using `[05.X
 
 **Dead links (Instagram, Facebook, Twitter):**
 
-Hovering a dead social reveals a tooltip with an inline SVG skull and the word "Dead." The skull animates with a chromatic aberration glitch effect using CSS keyframes and `filter: drop-shadow()`. No JavaScript.
+Hovering a dead social reveals a tooltip with an inline SVG skull and the word "Dead." The skull animates with a chromatic aberration glitch effect using CSS keyframes and `filter: drop-shadow()`. Pure CSS.
 
 ---
 
@@ -195,21 +198,22 @@ Hovering a dead social reveals a tooltip with an inline SVG skull and the word "
 
 ## Roadmap
 
-| Chapter | Work remaining |
+All four chapters are structurally complete. Remaining work is content only.
+
+| Item | What's needed |
 |---|---|
-| `[01]` Ethos | Write the `[03] In my own words` long-form prose section |
-| `[02]` Professional | Build `work.html` with career history, roles, and highlights |
-| `[03]` Photography | Build `photography.html` with gallery and motorsport focus |
-| `[04]` Side Projects | Build `projects.html` with self-hosted infra, builds, and experiments |
+| Photography grid | Upload photos to external host; add `src` URLs to the 6 photo slots in `index.html` and matching lightbox `<img>` tags |
+| Resume | Fill in the 3 work entry placeholders in `#work` (period, role, company, description); upload `resume.pdf` to repo root |
+| About | Bio is written; expand if desired |
 
 ---
 
 ## Repository
 
 ```
-index.html      landing page + Ethos overlay (inline)
-styles.css      all site-wide styles
-about.css       Ethos overlay styles
+index.html      landing page + all four chapter overlays + photo lightboxes
+styles.css      site-wide styles (palette, typography, pile nav, footer)
+chapter.css     overlay panels, photo grid, lightbox, resume, project cards
 favicon.svg     SVG wordmark/icon
 CLAUDE.md       AI context file (decisions, patterns, philosophy)
 CNAME           custom domain binding for GitHub Pages
