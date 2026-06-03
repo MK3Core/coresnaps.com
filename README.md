@@ -205,6 +205,7 @@ All four chapters are structurally complete. Remaining work is content only.
 | Photography grid | Upload photos to external host; add `src` URLs to the 6 photo slots in `index.html` and matching lightbox `<img>` tags |
 | Resume | Fill in the 3 work entry placeholders in `#work` (period, role, company, description); upload `resume.pdf` to repo root |
 | About | Bio is written; expand if desired |
+| Visual reskin | Redesign the color scheme and background imagery. Functionality is solid; the aesthetic feels dated. Goal is a more polished, professional look while preserving the dark-minimal direction and design system structure. Palette, surface treatments, and any background visuals are all in scope. |
 
 ---
 
