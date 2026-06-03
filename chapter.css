@@ -323,6 +323,9 @@
   transition: background 200ms ease;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  display: block;
+  color: inherit;
 }
 
 .project-card:hover { background: var(--surface); }
