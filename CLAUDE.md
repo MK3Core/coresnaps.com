@@ -6,6 +6,13 @@ It is also a deliberate example of how to write an effective AI context file. Al
 
 ---
 
+## Working agreement
+
+- **Always ask before committing or pushing.** Never commit or push as a side effect of completing a task unless explicitly instructed in that same message. Treat each commit/push as a separate, deliberate action requiring a prompt.
+- **Prefer localhost review before pushing.** Since this site is static HTML/CSS with no build step, open the file in a browser (or describe the changes clearly) so the owner can review before anything goes to `main` and live.
+
+---
+
 ## Project
 
 Static HTML/CSS personal portfolio for coresnaps.com, hosted on GitHub Pages. No build system, no frameworks, no dependencies. Minimal scripting: one small keyboard handler for ESC to close overlays. Core files: `index.html`, `styles.css`, `chapter.css`, `favicon.svg`.
