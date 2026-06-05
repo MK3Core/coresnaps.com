@@ -85,7 +85,7 @@
 /* ---- Section pattern ---- */
 
 .ch-section {
-  padding: clamp(40px, 5vw, 60px) 0;
+  padding: clamp(20px, 2.5vw, 30px) 0;
   border-top: 1px solid var(--border);
 }
 
@@ -268,6 +268,7 @@
 }
 
 .work-entry:first-child { border-top: 1px solid var(--border); }
+.work-entry:last-child { border-bottom: none; }
 
 .work-period {
   font-family: var(--font-mono);
@@ -299,6 +300,47 @@
   font-size: 14px;
   color: var(--fg-dim);
   line-height: 1.65;
+}
+
+.work-subrole {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.work-subrole .work-role {
+  font-size: clamp(13px, 1.1vw, 15px);
+  margin-bottom: 6px;
+}
+
+.competency-group {
+  margin-bottom: 24px;
+}
+
+.competency-group:last-child { margin-bottom: 0; }
+
+.competency-group-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.competency-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.competency-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--fg-dim);
+  border: 1px solid var(--border);
+  padding: 5px 11px;
 }
 
 @media (max-width: 560px) {
