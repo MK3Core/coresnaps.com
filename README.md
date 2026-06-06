@@ -79,16 +79,23 @@ Four content chapters presented as a stacked pile of banner cards. On page load 
 | `[03]` | Photography | Built — needs photos |
 | `[04]` | Side Projects | Built |
 
+**The design metaphor:**
+
+The pile is meant to feel like a physical rolodex: a stack of cards you flip through by dragging your cursor down through the pile. As you move down the stack, each card deals itself out in turn. The interaction feels mechanical and spatial, like something with weight. That feel was the goal; everything below is how it was achieved without JavaScript.
+
 **Pile mechanics:**
 
 - Cards overlap using negative `margin-bottom`, leaving an 80px visible tab per card
 - `[01]` sits on top (highest `z-index`); `[04]` is at the bottom
 - Hovering a card lifts it out of the stack with a vertical translate and box-shadow reveal
-- Cards above the hovered card shift upward slightly to reinforce the physical metaphor
 
-**The hover dead-zone problem (and how it's solved):**
+**The key insight — hover is not on the cards:**
 
-When a lower card lifts upward, it physically covers the hover tab of cards above it, making them unreachable. This is solved with invisible overlay `<a>` elements (`.pile-zone`) that divide the full pile height into four equal Y-position bands. Mouse position in the pile always maps to the correct card regardless of visual stacking. Cards have `pointer-events: none`; the zones are the actual navigation and interaction surface. Pure CSS.
+The natural instinct is to put `:hover` on the cards themselves. That breaks the rolodex feel immediately: because cards overlap via `z-index`, a lower card's tab is physically underneath a higher card, so mousing over it triggers the wrong card or nothing at all. The interaction becomes unpredictable.
+
+The solution is to decouple the hover surface from the visual cards entirely. Invisible `<a>` elements (`.pile-zone`) are layered above everything, dividing the full pile height into four equal Y-position bands. The user is never actually hovering a card — they are hovering a transparent positional zone that corresponds to a card by screen position. As the cursor travels down the pile, each zone fires in sequence, lifting the correct card via CSS sibling combinators (`~`). Cards themselves have `pointer-events: none`.
+
+The result: the cursor moving through Y-space always maps to the same card, regardless of how the cards are visually stacked or lifted. The rolodex feel is consistent and reliable. Pure CSS, no JavaScript.
 
 ---
 
@@ -166,8 +173,8 @@ Hovering a dead social reveals a tooltip with an inline SVG skull and the word "
 | `--bg` | `#09090b` | Page background |
 | `--fg` | `#fafaf9` | Primary text |
 | `--fg-dim` | `#a1a1aa` | Secondary text |
-| `--accent` | `#6366f1` | Accent, active states, emphasis |
-| `--accent-bright` | `#818cf8` | Hover highlight on accent elements |
+| `--accent` | `#f59e0b` | Accent, active states, emphasis |
+| `--accent-bright` | `#fbbf24` | Hover highlight on accent elements |
 | `--muted` | `#52525b` | Tertiary text, bracket glyphs |
 | `--muted-2` | `#3f3f46` | Subtle borders, decorative elements |
 | `--border` | `rgba(250,250,249,0.07)` | Card and section borders |
