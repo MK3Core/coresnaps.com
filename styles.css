@@ -1,6 +1,6 @@
 /* ========================================================================
    coresnaps.com — chapter-style portfolio index
-   Dark theme · indigo accent · minimal
+   Dark theme · teal accent · minimal
    ======================================================================== */
 
    :root {
@@ -12,8 +12,8 @@
     --fg-dim: #a1a1aa;
     --muted: #52525b;
     --muted-2: #3f3f46;
-    --accent: #6366f1;
-    --accent-bright: #818cf8;
+    --accent: #14b8a6;
+    --accent-bright: #2dd4bf;
   
     --font-sans: "Geist", "Inter Tight", system-ui, -apple-system, sans-serif;
     --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, "SF Mono", monospace;
