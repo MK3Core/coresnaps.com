@@ -51,7 +51,7 @@
      ======================================================================== */
   
   .hero {
-    padding: clamp(40px, 6vw, 72px) 0 clamp(32px, 4vw, 48px);
+    padding: clamp(96px, 14vh, 200px) 0 clamp(32px, 4vw, 48px);
   }
   
   .hero h1 {
@@ -221,9 +221,9 @@
   }
   .chapter[data-ch="02"] .chapter-img {
     background-color: #090c0f;
-    background-image: url("https://live.staticflickr.com/65535/51996700604_178d1c7f6d_h.jpg");
+    background-image: url("https://live.staticflickr.com/65535/55317109909_0032e068d0_h.jpg");
     background-size: cover;
-    background-position: center calc(50% - 210px);
+    background-position: center calc(50% - 70px);
   }
   .chapter[data-ch="03"] .chapter-img {
     background-color: #0a0b0f;

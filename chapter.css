@@ -176,7 +176,11 @@
   border: 1px solid var(--border);
   overflow: hidden;
   cursor: zoom-in;
+  filter: brightness(0.4);
+  transition: filter 3000ms cubic-bezier(.2,.6,.2,1);
 }
+
+.photo-grid-item:hover { filter: brightness(1); }
 
 .photo-grid-item img {
   width: 100%;
@@ -305,12 +309,11 @@
 .work-subrole {
   margin-top: 18px;
   padding-top: 16px;
-  border-top: 1px solid var(--border);
 }
 
 .work-subrole .work-role {
-  font-size: clamp(13px, 1.1vw, 15px);
-  margin-bottom: 6px;
+  font-size: clamp(15px, 1.2vw, 17px);
+  margin-bottom: 3px;
 }
 
 .competency-group {
