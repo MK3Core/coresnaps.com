@@ -1,7 +1,7 @@
 # coresnaps.com Product Requirement Document
 
 **Owner:** Alex Core, Product Manager  
-**Status:** Active development  
+**Status:** Live  
 **Live:** [coresnaps.com](https://coresnaps.com) · [GitHub](https://github.com/MK3Core/coresnaps.com)
 
 ---
@@ -74,10 +74,10 @@ Four content chapters presented as a stacked pile of banner cards. On page load 
 
 | ID | Title | Status |
 |---|---|---|
-| `[01]` | About | Built — needs no additional structure |
-| `[02]` | Professional | Built — needs resume content |
-| `[03]` | Photography | Built — needs photos |
-| `[04]` | Side Projects | Built |
+| `[01]` | About | Complete |
+| `[02]` | Professional | Complete |
+| `[03]` | Photography | Complete |
+| `[04]` | Side Projects | Complete |
 
 **The design metaphor:**
 
@@ -96,6 +96,10 @@ The natural instinct is to put `:hover` on the cards themselves. That breaks the
 The solution is to decouple the hover surface from the visual cards entirely. Invisible `<a>` elements (`.pile-zone`) are layered above everything, dividing the full pile height into four equal Y-position bands. The user is never actually hovering a card — they are hovering a transparent positional zone that corresponds to a card by screen position. As the cursor travels down the pile, each zone fires in sequence, lifting the correct card via CSS sibling combinators (`~`). Cards themselves have `pointer-events: none`.
 
 The result: the cursor moving through Y-space always maps to the same card, regardless of how the cards are visually stacked or lifted. The rolodex feel is consistent and reliable. Pure CSS, no JavaScript.
+
+**Card photo backgrounds:**
+
+Each card has a full-bleed photo background sourced from Flickr (hotlinked via `live.staticflickr.com`). Photos are positioned per-card using `background-position: center calc(50% ± Npx)` to control the exact crop. A semi-transparent dark tint overlay (`.chapter-img::before`, `rgba(9,9,11,0.65)`) sits above the photo and fades out on hover over 3000ms, revealing the full photo as the card lifts. The tint and the card lift animate together, making the reveal feel like the card is coming into focus as it comes forward.
 
 ---
 
@@ -119,7 +123,7 @@ Each chapter opens as a CSS `:target` panel triggered by hash navigation. No pag
 
 **Photography lightbox:**
 
-Clicking a photo in the grid navigates to `#photo-N`, opening a fullscreen lightbox above the panel. Clicking the backdrop or pressing ESC returns to `#photography`.
+Clicking a photo in the grid navigates to `#photo-N`, opening a fullscreen lightbox above the panel. Clicking the backdrop or pressing ESC returns to `#photography`. Grid thumbnails use `object-fit: cover` (3:2 crop); lightbox uses `object-fit: contain` (full image, no crop). 12 photos total, hosted on Flickr.
 
 ---
 
@@ -188,7 +192,7 @@ Hovering a dead social reveals a tooltip with an inline SVG skull and the word "
 
 **Principles**
 
-- Indigo accent is used sparingly. Emphasis only, not decoration.
+- Amber accent is used sparingly. Emphasis only, not decoration.
 - Every element must justify its presence
 - Simple over complex; complexity earns its place
 - Form and function are not in competition. The best results sit where they resolve.
@@ -208,26 +212,32 @@ Hovering a dead social reveals a tooltip with an inline SVG skull and the word "
 
 ## Roadmap
 
-All four chapters are structurally complete. Remaining work is content only.
+All four chapters are complete and live. The site is fully content-populated.
 
-| Item | What's needed |
+| Item | Status |
 |---|---|
-| Photography grid | Upload photos to external host; add `src` URLs to the 6 photo slots in `index.html` and matching lightbox `<img>` tags |
-| Resume | Fill in the 3 work entry placeholders in `#work` (period, role, company, description); upload `resume.pdf` to repo root |
-| About | Bio is written; expand if desired |
-| Visual reskin | Redesign the color scheme and background imagery. Functionality is solid; the aesthetic feels dated. Goal is a more polished, professional look while preserving the dark-minimal direction and design system structure. Palette, surface treatments, and any background visuals are all in scope. |
+| Photography grid | Complete — 12 photos, Flickr-hosted, with lightbox |
+| Resume | Complete |
+| About | Complete |
+| Visual reskin | Complete — amber accent, Flickr photo card backgrounds, tint/reveal hover effect |
+
+Future considerations (not planned):
+
+- Swap photography card background for a better crop when a better photo is found
+- Add more photos to the grid over time
 
 ---
 
 ## Repository
 
 ```
-index.html      landing page + all four chapter overlays + photo lightboxes
-styles.css      site-wide styles (palette, typography, pile nav, footer)
-chapter.css     overlay panels, photo grid, lightbox, resume, project cards
-favicon.svg     SVG wordmark/icon
-CLAUDE.md       AI context file (decisions, patterns, philosophy)
-CNAME           custom domain binding for GitHub Pages
+index.html          landing page + all four chapter overlays + photo lightboxes
+styles.css          site-wide styles (palette, typography, pile nav, footer)
+chapter.css         overlay panels, photo grid, lightbox, resume, project cards
+favicon.svg         SVG favicon, color matches --accent
+CLAUDE.md           AI context file (decisions, patterns, philosophy)
+CNAME               custom domain binding for GitHub Pages
+palette-preview.html  color palette sandbox for future accent color exploration
 ```
 
 ---
