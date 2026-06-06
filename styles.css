@@ -221,9 +221,9 @@
   }
   .chapter[data-ch="02"] .chapter-img {
     background-color: #090c0f;
-    background-image: url("https://live.staticflickr.com/65535/55317109909_0032e068d0_h.jpg");
+    background-image: url("https://live.staticflickr.com/65535/55317733801_2168ca704e_k.jpg");
     background-size: cover;
-    background-position: center calc(50% - 70px);
+    background-position: center center;
   }
   .chapter[data-ch="03"] .chapter-img {
     background-color: #0a0b0f;
