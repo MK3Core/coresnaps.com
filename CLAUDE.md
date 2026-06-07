@@ -10,6 +10,7 @@ It is also a deliberate example of how to write an effective AI context file. Al
 
 - **Always ask before committing or pushing.** Never commit or push as a side effect of completing a task unless explicitly instructed in that same message. Treat each commit/push as a separate, deliberate action requiring a prompt.
 - **Prefer localhost review before pushing.** Since this site is static HTML/CSS with no build step, open the file in a browser (or describe the changes clearly) so the owner can review before anything goes to `main` and live.
+- **No em dashes. Ever.** Not in copy, not in comments, not anywhere. Use a comma, a period, or rewrite the sentence.
 
 ---
 
