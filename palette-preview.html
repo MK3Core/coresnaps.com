@@ -183,6 +183,105 @@
     }
     .swatch .preview-link { color: var(--ab); text-decoration-color: color-mix(in srgb, var(--ab) 40%, transparent); }
     .swatch .preview-mono b { color: var(--a); }
+
+    /* ---- Background Explorations ---- */
+    .bg-section-heading {
+      font-size: 13px;
+      font-family: "Geist Mono", monospace;
+      color: #52525b;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 64px 0 24px;
+    }
+
+    .bg-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .bg-preview {
+      border: 1px solid rgba(250,250,249,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bg-preview-header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid rgba(250,250,249,0.07);
+      position: relative;
+      z-index: 1;
+    }
+
+    .bg-preview-title {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .bg-desc {
+      font-size: 11px;
+      font-family: "Geist Mono", monospace;
+      color: #52525b;
+      line-height: 1.5;
+    }
+
+    .bg-preview-body {
+      padding: 24px 24px 28px;
+      position: relative;
+      z-index: 1;
+      min-height: 230px;
+    }
+
+    .bg-preview .preview-nav a {
+      font-size: 12px;
+      font-family: "Geist Mono", monospace;
+      padding: 5px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      border: 1px solid;
+      transition: opacity 150ms;
+    }
+    .bg-preview .btn-fill  { background: #6366f1; border-color: #6366f1; color: #fafaf9; }
+    .bg-preview .btn-outline { background: transparent; border-color: #6366f1; color: #6366f1; }
+    .bg-preview .preview-tag {
+      border-color: rgba(99,102,241,0.4);
+      color: #818cf8;
+      background: rgba(99,102,241,0.1);
+    }
+    .bg-preview .preview-link { color: #818cf8; text-decoration-color: rgba(129,140,248,0.4); }
+    .bg-preview .preview-mono b { color: #6366f1; }
+
+    /* Option 1: Noise Grain */
+    .bg-noise { background: #09090b; }
+    .bg-noise::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Option 2: Dot Matrix */
+    .bg-dots {
+      background-color: #09090b;
+      background-image: radial-gradient(rgba(250,250,249,0.08) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .dots-text { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: visible; }
+
+    /* Option 3: Indigo Glow */
+    .bg-glow {
+      background:
+        radial-gradient(ellipse 80% 55% at 15% 20%, rgba(99,102,241,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 45% at 85% 80%, rgba(129,140,248,0.12) 0%, transparent 55%),
+        #09090b;
+    }
   </style>
 </head>
 <body>
@@ -360,6 +459,96 @@
     </div>
 
   </div>
+
+  <p class="bg-section-heading">Background Explorations</p>
+
+  <div class="bg-grid">
+
+    <!-- Option 1: Noise Grain -->
+    <div class="bg-preview bg-noise">
+      <div class="bg-preview-header">
+        <div class="bg-preview-title">
+          <span class="swatch-label">Option 1</span>
+          <span class="swatch-name" style="color:#818cf8">Noise Grain</span>
+        </div>
+        <p class="bg-desc">SVG feTurbulence micro-texture. Tactile, nearly invisible at reading distance. No visible pattern.</p>
+      </div>
+      <div class="bg-preview-body">
+        <div class="preview-nav">
+          <a href="#" class="btn-fill">[01] About</a>
+          <a href="#" class="btn-outline">[02] Work</a>
+        </div>
+        <div class="preview-hero"><span style="color:#6366f1">core</span>snaps<span style="color:#52525b">.com</span></div>
+        <div class="preview-sub">Product manager. Currently at Yelp. Building at the intersection of systems, people, and product.</div>
+        <span class="preview-tag">PM</span>
+        <span class="preview-tag">Strategy</span>
+        <div class="preview-divider"></div>
+        <div class="preview-mono"><span style="color:#52525b">[</span><b>04</b><span style="color:#52525b">]</span> Side Projects &nbsp;<a href="#" class="preview-link">race-calibre →</a></div>
+      </div>
+    </div>
+
+    <!-- Option 2: Dot Matrix -->
+    <div class="bg-preview bg-dots">
+      <svg class="dots-text" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="dp-amber" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="10" cy="10" r="1.5" fill="rgba(245,158,11,0.85)"/>
+          </pattern>
+          <pattern id="dp-white" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="10" cy="10" r="1.5" fill="rgba(250,250,249,0.65)"/>
+          </pattern>
+        </defs>
+        <text x="50%" y="62%" text-anchor="middle" dominant-baseline="central"
+              font-family="&quot;Geist Mono&quot;, monospace" font-weight="700" font-size="34">
+          <tspan fill="url(#dp-amber)">core</tspan><tspan fill="url(#dp-white)">snaps.com</tspan>
+        </text>
+      </svg>
+      <div class="bg-preview-header">
+        <div class="bg-preview-title">
+          <span class="swatch-label">Option 2</span>
+          <span class="swatch-name" style="color:#818cf8">Dot Matrix</span>
+        </div>
+        <p class="bg-desc">Repeating 20px radial-gradient dot grid at low opacity. Reinforces the mono/code aesthetic.</p>
+      </div>
+      <div class="bg-preview-body">
+        <div class="preview-nav">
+          <a href="#" class="btn-fill">[01] About</a>
+          <a href="#" class="btn-outline">[02] Work</a>
+        </div>
+        <div class="preview-hero"><span style="color:#6366f1">core</span>snaps<span style="color:#52525b">.com</span></div>
+        <div class="preview-sub">Product manager. Currently at Yelp. Building at the intersection of systems, people, and product.</div>
+        <span class="preview-tag">PM</span>
+        <span class="preview-tag">Strategy</span>
+        <div class="preview-divider"></div>
+        <div class="preview-mono"><span style="color:#52525b">[</span><b>04</b><span style="color:#52525b">]</span> Side Projects &nbsp;<a href="#" class="preview-link">race-calibre →</a></div>
+      </div>
+    </div>
+
+    <!-- Option 3: Indigo Glow -->
+    <div class="bg-preview bg-glow">
+      <div class="bg-preview-header">
+        <div class="bg-preview-title">
+          <span class="swatch-label">Option 3</span>
+          <span class="swatch-name" style="color:#818cf8">Indigo Glow</span>
+        </div>
+        <p class="bg-desc">Layered radial gradients in site accent color bleeding from corners. Depth without a visible pattern.</p>
+      </div>
+      <div class="bg-preview-body">
+        <div class="preview-nav">
+          <a href="#" class="btn-fill">[01] About</a>
+          <a href="#" class="btn-outline">[02] Work</a>
+        </div>
+        <div class="preview-hero"><span style="color:#6366f1">core</span>snaps<span style="color:#52525b">.com</span></div>
+        <div class="preview-sub">Product manager. Currently at Yelp. Building at the intersection of systems, people, and product.</div>
+        <span class="preview-tag">PM</span>
+        <span class="preview-tag">Strategy</span>
+        <div class="preview-divider"></div>
+        <div class="preview-mono"><span style="color:#52525b">[</span><b>04</b><span style="color:#52525b">]</span> Side Projects &nbsp;<a href="#" class="preview-link">race-calibre →</a></div>
+      </div>
+    </div>
+
+  </div>
+
 
 </body>
 </html>
