@@ -140,8 +140,7 @@
   vertical-align: middle;
 }
 
-.sponsor-btn:hover .sponsor-heart,
-.sponsor-tile:hover .sponsor-heart {
+.sponsor-btn:hover .sponsor-heart {
   animation: heart-glitch 0.28s steps(5) infinite;
 }
 
