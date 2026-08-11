@@ -455,6 +455,11 @@
   line-height: 1.6;
 }
 
+.npm-badge {
+  display: block;
+  margin-top: 16px;
+}
+
 /* ========================================================================
    Overlay panels — triggered by hash, closed by href="#" or backdrop click
    ======================================================================== */
