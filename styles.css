@@ -247,25 +247,25 @@
   
   .chapter[data-ch="01"] .chapter-img {
     background-color: #0b0b0f;
-    background-image: url("https://live.staticflickr.com/65535/54383781152_b8d5cfd873_h.jpg");
+    background-image: url("photos/photo-03.jpg");
     background-size: cover;
     background-position: center;
   }
   .chapter[data-ch="02"] .chapter-img {
     background-color: #090c0f;
-    background-image: url("https://live.staticflickr.com/65535/55317733801_2168ca704e_k.jpg");
+    background-image: url("photos/photo-11.jpg");
     background-size: cover;
     background-position: center center;
   }
   .chapter[data-ch="03"] .chapter-img {
     background-color: #0a0b0f;
-    background-image: url("https://live.staticflickr.com/65535/53775809563_6c4a90f4ef_h.jpg");
+    background-image: url("photos/photo-09.jpg");
     background-size: cover;
     background-position: center calc(50% - 50px);
   }
   .chapter[data-ch="04"] .chapter-img {
     background-color: #0c0a0f;
-    background-image: url("https://live.staticflickr.com/65535/54385036710_22f31301d4_h.jpg");
+    background-image: url("photos/photo-12.jpg");
     background-size: cover;
     background-position: center calc(50% - 20px);
   }
