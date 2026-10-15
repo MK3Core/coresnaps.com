@@ -30,9 +30,9 @@ All styling lives in `styles.css` (site-wide) and `chapter.css` (overlay panels,
 
 ## Design system
 
-- **Palette:** near-black background (`#09090b`), off-white text (`#fafaf9`), indigo accent (`#6366f1` / `--accent`), bright indigo (`#818cf8` / `--accent-bright`)
+- **Palette:** near-black background (`#09090b`), off-white text (`#fafaf9`), amber accent (`#f59e0b` / `--accent`), bright amber (`#fbbf24` / `--accent-bright`)
 - **Fonts:** Geist (sans) and Geist Mono, loaded from Google Fonts; fall back to system fonts
-- **Numbering:** sections use `[XX]` bracket notation rendered in `var(--font-mono)`; brackets themselves use `--muted`, numbers use `--bronze`
+- **Numbering:** sections use `[XX]` bracket notation rendered in `var(--font-mono)`; brackets themselves use `--muted`, numbers use `--accent`
 - **Minimal scripting:** one inline `<script>` in `index.html` handles ESC key to close overlays/lightbox. All visual interactivity (hover effects, overlays, tooltips, skull glitch, photo lightbox) is pure CSS
 - **Tone:** clean, minimal, intentional. No decoration for decoration's sake. Every element should justify its presence
 
@@ -71,7 +71,7 @@ All four chapters open as CSS `:target` panels. Key details:
 
 ## Conventions
 
-- Bronze is used for emphasis and active states. Use it sparingly and deliberately.
+- Amber (`--accent`) is used for emphasis and active states. Use it sparingly and deliberately.
 - The `coresnaps.com` wordmark in the hero is intentionally small (`clamp(22px, 2.6vw, 32px)`). It is a wordmark, not a headline.
 - When adding new chapter pages, match `:root` variables, font stack, and `[XX]` numbering from `index.html`
 - Commit messages should be descriptive; use the imperative mood
