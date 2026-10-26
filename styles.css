@@ -179,53 +179,58 @@
   .pile-zone[data-zone="03"] { top: calc(var(--zone-h) * 2); height: var(--zone-h); }
   .pile-zone[data-zone="04"] { top: calc(var(--zone-h) * 3); height: var(--zone-h); }
 
-  /* Zone 01 */
-  .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"] {
-    border-color: var(--border-strong); transform: translateY(-32px); z-index: 10; box-shadow: 0 24px 72px rgba(0,0,0,0.75);
-  }
-  .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"] .chapter-img { transform: scale(1.025); }
-  .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"]::before { transform: scaleX(1); }
-  .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"] .chapter-title { color: var(--accent-bright); }
-  .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"] .chapter-arrow { color: var(--accent); transform: translateX(8px); }
-  .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="02"],
-  .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="03"],
-  .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="04"] { transform: translateY(28px); }
+  /* Hover choreography only runs where a real hover pointer exists.
+     Touch devices get the stacked layout further down. */
+  @media (hover: hover) and (pointer: fine) {
+    /* Zone 01 */
+    .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"] {
+      border-color: var(--border-strong); transform: translateY(-32px); z-index: 10; box-shadow: 0 24px 72px rgba(0,0,0,0.75);
+    }
+    .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"] .chapter-img { transform: scale(1.025); }
+    .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"]::before { transform: scaleX(1); }
+    .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"] .chapter-title { color: var(--accent-bright); }
+    .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"] .chapter-arrow { color: var(--accent); transform: translateX(8px); }
+    .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="02"],
+    .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="03"],
+    .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="04"] { transform: translateY(28px); }
 
-  /* Zone 02 */
-  .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="01"] { transform: translateY(-20px); }
-  .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"] {
-    border-color: var(--border-strong); transform: translateY(-32px); z-index: 10; box-shadow: 0 24px 72px rgba(0,0,0,0.75);
-  }
-  .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"] .chapter-img { transform: scale(1.025); }
-  .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"]::before { transform: scaleX(1); }
-  .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"] .chapter-title { color: var(--accent-bright); }
-  .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"] .chapter-arrow { color: var(--accent); transform: translateX(8px); }
-  .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="03"],
-  .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="04"] { transform: translateY(28px); }
+    /* Zone 02 */
+    .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="01"] { transform: translateY(-20px); }
+    .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"] {
+      border-color: var(--border-strong); transform: translateY(-32px); z-index: 10; box-shadow: 0 24px 72px rgba(0,0,0,0.75);
+    }
+    .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"] .chapter-img { transform: scale(1.025); }
+    .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"]::before { transform: scaleX(1); }
+    .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"] .chapter-title { color: var(--accent-bright); }
+    .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"] .chapter-arrow { color: var(--accent); transform: translateX(8px); }
+    .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="03"],
+    .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="04"] { transform: translateY(28px); }
 
-  /* Zone 03 */
-  .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="01"],
-  .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="02"] { transform: translateY(-20px); }
-  .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"] {
-    border-color: var(--border-strong); transform: translateY(-32px); z-index: 10; box-shadow: 0 24px 72px rgba(0,0,0,0.75);
-  }
-  .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"] .chapter-img { transform: scale(1.025); }
-  .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"]::before { transform: scaleX(1); }
-  .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"] .chapter-title { color: var(--accent-bright); }
-  .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"] .chapter-arrow { color: var(--accent); transform: translateX(8px); }
-  .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="04"] { transform: translateY(28px); }
+    /* Zone 03 */
+    .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="01"],
+    .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="02"] { transform: translateY(-20px); }
+    .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"] {
+      border-color: var(--border-strong); transform: translateY(-32px); z-index: 10; box-shadow: 0 24px 72px rgba(0,0,0,0.75);
+    }
+    .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"] .chapter-img { transform: scale(1.025); }
+    .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"]::before { transform: scaleX(1); }
+    .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"] .chapter-title { color: var(--accent-bright); }
+    .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"] .chapter-arrow { color: var(--accent); transform: translateX(8px); }
+    .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="04"] { transform: translateY(28px); }
 
-  /* Zone 04 */
-  .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="01"],
-  .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="02"],
-  .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="03"] { transform: translateY(-20px); }
-  .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"] {
-    border-color: var(--border-strong); transform: translateY(-32px); z-index: 10; box-shadow: 0 24px 72px rgba(0,0,0,0.75);
+    /* Zone 04 */
+    .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="01"],
+    .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="02"],
+    .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="03"] { transform: translateY(-20px); }
+    .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"] {
+      border-color: var(--border-strong); transform: translateY(-32px); z-index: 10; box-shadow: 0 24px 72px rgba(0,0,0,0.75);
+    }
+    .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"] .chapter-img { transform: scale(1.025); }
+    .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"]::before { transform: scaleX(1); }
+    .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"] .chapter-title { color: var(--accent-bright); }
+    .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"] .chapter-arrow { color: var(--accent); transform: translateX(8px); }
+  
   }
-  .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"] .chapter-img { transform: scale(1.025); }
-  .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"]::before { transform: scaleX(1); }
-  .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"] .chapter-title { color: var(--accent-bright); }
-  .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"] .chapter-arrow { color: var(--accent); transform: translateX(8px); }
   
   .chapter-img {
     position: absolute;
@@ -279,10 +284,12 @@
     transition: opacity 3000ms cubic-bezier(.2,.6,.2,1);
   }
 
-  .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"] .chapter-img::before,
-  .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"] .chapter-img::before,
-  .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"] .chapter-img::before,
-  .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"] .chapter-img::before { opacity: 0; }
+  @media (hover: hover) and (pointer: fine) {
+    .pile-zone[data-zone="01"]:hover ~ .chapter[data-ch="01"] .chapter-img::before,
+    .pile-zone[data-zone="02"]:hover ~ .chapter[data-ch="02"] .chapter-img::before,
+    .pile-zone[data-zone="03"]:hover ~ .chapter[data-ch="03"] .chapter-img::before,
+    .pile-zone[data-zone="04"]:hover ~ .chapter[data-ch="04"] .chapter-img::before { opacity: 0; }
+  }
   
   .chapter-img::after {
     content: "";
@@ -361,7 +368,42 @@
     .chapter-title { font-size: 22px; }
     .chapter-label-main { gap: 12px; }
   }
-  
+
+  /* ---- Touch layout: no hover, so unstack the pile into plain banners ----
+     Zones stay as the real links (same markup, same screen reader behavior),
+     but each one now sits exactly over its own card. */
+
+  @media not all and (hover: hover) and (pointer: fine) {
+    .chapters {
+      --card-h: clamp(120px, 16vw, 160px);
+      --card-gap: 10px;
+    }
+
+    .chapter {
+      height: var(--card-h);
+      margin-bottom: var(--card-gap);
+    }
+
+    .pile-zone { -webkit-tap-highlight-color: rgba(245, 158, 11, 0.12); }
+    .pile-zone[data-zone="01"] { top: 0;                                           height: var(--card-h); }
+    .pile-zone[data-zone="02"] { top: calc((var(--card-h) + var(--card-gap)) * 1); height: var(--card-h); }
+    .pile-zone[data-zone="03"] { top: calc((var(--card-h) + var(--card-gap)) * 2); height: var(--card-h); }
+    .pile-zone[data-zone="04"] { top: calc((var(--card-h) + var(--card-gap)) * 3); height: var(--card-h); }
+
+    /* Lighter dim so the photos come through without a hover reveal */
+    .chapter-img::before { opacity: 0.55; }
+
+    /* Press feedback */
+    .pile-zone[data-zone="01"]:active ~ .chapter[data-ch="01"]::before,
+    .pile-zone[data-zone="02"]:active ~ .chapter[data-ch="02"]::before,
+    .pile-zone[data-zone="03"]:active ~ .chapter[data-ch="03"]::before,
+    .pile-zone[data-zone="04"]:active ~ .chapter[data-ch="04"]::before { transform: scaleX(1); }
+    .pile-zone[data-zone="01"]:active ~ .chapter[data-ch="01"] .chapter-title,
+    .pile-zone[data-zone="02"]:active ~ .chapter[data-ch="02"] .chapter-title,
+    .pile-zone[data-zone="03"]:active ~ .chapter[data-ch="03"] .chapter-title,
+    .pile-zone[data-zone="04"]:active ~ .chapter[data-ch="04"] .chapter-title { color: var(--accent-bright); }
+  }
+
   /* ========================================================================
      Footer — compact socials row + colophon
      ======================================================================== */
@@ -379,7 +421,7 @@
     gap: 14px clamp(12px, 2vw, 28px);
     align-items: baseline;
   }
-  @media (max-width: 720px) {
+  @media (max-width: 720px), not all and (hover: hover) and (pointer: fine) {
     .footer-socials { flex-wrap: wrap; }
   }
   
@@ -463,6 +505,7 @@
   }
   .social.is-dead:focus { outline: none; }
   .social.is-dead:hover .s-tip-dead,
+  .social.is-dead:focus .s-tip-dead,
   .social.is-dead:focus-visible .s-tip-dead {
     opacity: 1;
     transform: translateX(-50%) translateY(-2px);
@@ -492,10 +535,12 @@
   }
   
   .social.is-dead:hover .s-tip-dead .skull,
+  .social.is-dead:focus .s-tip-dead .skull,
   .social.is-dead:focus-visible .s-tip-dead .skull {
     animation: skull-glitch 0.28s steps(5) infinite;
   }
   .social.is-dead:hover .s-tip-dead .rip,
+  .social.is-dead:focus .s-tip-dead .rip,
   .social.is-dead:focus-visible .s-tip-dead .rip {
     animation: rip-flicker 0.22s steps(3) infinite;
   }
@@ -536,8 +581,10 @@
   
   @media (prefers-reduced-motion: reduce) {
     .social.is-dead:hover .s-tip-dead .skull,
+    .social.is-dead:focus .s-tip-dead .skull,
     .social.is-dead:focus-visible .s-tip-dead .skull,
     .social.is-dead:hover .s-tip-dead .rip,
+    .social.is-dead:focus .s-tip-dead .rip,
     .social.is-dead:focus-visible .s-tip-dead .rip {
       animation: none;
     }

@@ -234,6 +234,12 @@
 
 .photo-grid-item:hover img { transform: scale(1.04); }
 
+/* Touch: no hover to reveal, so show photos at full brightness */
+@media not all and (hover: hover) and (pointer: fine) {
+  .photo-grid-item { filter: none; }
+  .photo-grid-item:hover img { transform: none; }
+}
+
 /* Lightbox — z-index 200 so it sits above the panel overlay */
 
 .photo-lightbox {
@@ -260,14 +266,16 @@
   z-index: 1;
   max-width: 90vw;
   max-height: 88vh;
+  max-height: 88dvh;
   object-fit: contain;
   display: block;
 }
 
 .photo-lightbox-close {
   position: fixed;
-  top: 20px;
-  right: 24px;
+  top: 8px;
+  right: 12px;
+  padding: 12px;
   z-index: 2;
   font-family: var(--font-mono);
   font-size: 11px;
@@ -520,6 +528,7 @@
   position: relative;
   width: min(900px, calc(100% - 2 * var(--gutter)));
   height: 88vh;
+  height: 88dvh;
   background: var(--bg);
   border: 1px solid var(--border-strong);
   display: flex;
@@ -578,4 +587,16 @@
 
 .ch-panel-body .ch-title {
   font-size: clamp(36px, 6vw, 64px);
+}
+
+/* Phones: narrow in portrait, short in landscape. Panel takes the whole screen. */
+@media (max-width: 640px), (max-height: 500px) {
+  .ch-panel {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    border: 0;
+  }
+  .ch-panel-header { padding: 0 20px; }
+  .ch-panel-body { padding: 32px 20px; }
 }

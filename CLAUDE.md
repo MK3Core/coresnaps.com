@@ -61,6 +61,17 @@ The chapter navigation banners (`[01] About`, `[02] Professional`, etc.) are sta
 
 Do not break this pattern when editing the banner section. If card height or tab size changes, update both the card `margin-bottom` calc and the `--zone-h` variable in `.chapters` together.
 
+### Touch devices
+
+The pile only exists where hover does. All hover choreography sits inside `@media (hover: hover) and (pointer: fine)`, gated on input capability, not screen width, so a narrow desktop window keeps the pile and a large phone or iPad does not.
+
+- Touch devices match the inverse, `@media not all and (hover: hover) and (pointer: fine)`, and get four plain stacked banners (`--card-h`, `--card-gap` on `.chapters`)
+- The `.pile-zone` links are kept and repositioned to sit exactly over each card, so markup and screen reader behavior are identical on both layouts
+- Press feedback uses `:active` plus an amber `-webkit-tap-highlight-color`; no script
+- Hover-only reveals (dimmed chapter images, dimmed photo grid) are relaxed on touch so content is visible without hovering
+
+Overlay panels go full-screen at `(max-width: 640px), (max-height: 500px)`, which covers phones in portrait (narrow) and landscape (short). Use `dvh` alongside `vh` for viewport heights so mobile browser chrome does not clip panels.
+
 ## Chapter overlays
 
 All four chapters open as CSS `:target` panels. Key details:
