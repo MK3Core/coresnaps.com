@@ -65,7 +65,8 @@ Do not break this pattern when editing the banner section. If card height or tab
 
 The pile only exists where hover does. All hover choreography sits inside `@media (hover: hover) and (pointer: fine)`, gated on input capability, not screen width, so a narrow desktop window keeps the pile and a large phone or iPad does not.
 
-- Touch devices match the inverse, `@media not all and (hover: hover) and (pointer: fine)`, and get four plain stacked banners (`--card-h`, `--card-gap` on `.chapters`)
+- Touch devices match the inverse, `@media not all and (hover: hover) and (pointer: fine)`, and get four flush, borderless stacked banners (`--card-h`, `--card-gap: 0px` on `.chapters`)
+- Banner photos on touch use percentage `background-position` crops, not the desktop px offsets. Short cards plus px offsets leave uncovered strips
 - The `.pile-zone` links are kept and repositioned to sit exactly over each card, so markup and screen reader behavior are identical on both layouts
 - Press feedback uses `:active` plus an amber `-webkit-tap-highlight-color`; no script
 - Hover-only reveals (dimmed chapter images, dimmed photo grid) are relaxed on touch so content is visible without hovering

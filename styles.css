@@ -376,13 +376,20 @@
   @media not all and (hover: hover) and (pointer: fine) {
     .chapters {
       --card-h: clamp(120px, 16vw, 160px);
-      --card-gap: 10px;
+      --card-gap: 0px;
     }
 
+    /* Flush, borderless banners read as one continuous strip */
     .chapter {
       height: var(--card-h);
       margin-bottom: var(--card-gap);
+      border: 0;
     }
+
+    /* The desktop crops use px offsets tuned for a wide card. Short touch
+       cards need percentage crops so the photo always covers the card. */
+    .chapter[data-ch="01"] .chapter-img { background-size: 130% auto; background-position: center 62%; }
+    .chapter[data-ch="03"] .chapter-img { background-position: center 70%; }
 
     .pile-zone { -webkit-tap-highlight-color: rgba(245, 158, 11, 0.12); }
     .pile-zone[data-zone="01"] { top: 0;                                           height: var(--card-h); }
