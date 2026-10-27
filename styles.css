@@ -85,6 +85,10 @@
   .hero {
     padding: clamp(96px, 14vh, 200px) 0 clamp(32px, 4vw, 48px);
   }
+
+  @media (max-width: 640px), (max-height: 500px) {
+    .hero { padding: 48px 0 28px; }
+  }
   
   .hero h1 {
     font-family: var(--font-mono);
@@ -429,7 +433,20 @@
     align-items: baseline;
   }
   @media (max-width: 720px), not all and (hover: hover) and (pointer: fine) {
-    .footer-socials { flex-wrap: wrap; }
+    /* Aligned columns instead of a ragged wrap. 150px columns give 2 on a
+       phone and 4 on tablets, which also splits live links from dead ones. */
+    .footer-socials {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px 12px;
+    }
+    .social { justify-self: start; }
+  }
+
+  /* Two columns on phones: anchor tooltips to the outer edge so they stay on screen */
+  @media (max-width: 640px) {
+    .social:nth-child(odd)  { --tip-left: 0;    --tip-x: 0;     --tip-arrow: 18px; }
+    .social:nth-child(even) { --tip-left: 100%; --tip-x: -100%; --tip-arrow: calc(100% - 18px); }
   }
   
   .social {
@@ -465,8 +482,8 @@
   .social .s-tip {
     position: absolute;
     bottom: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%) translateY(4px);
+    left: var(--tip-left, 50%);
+    transform: translateX(var(--tip-x, -50%)) translateY(4px);
     white-space: nowrap;
     padding: 7px 10px;
     background: var(--surface);
@@ -484,7 +501,7 @@
   .social .s-tip::after {
     content: "";
     position: absolute;
-    left: 50%;
+    left: var(--tip-arrow, 50%);
     top: 100%;
     transform: translateX(-50%) rotate(45deg) translateY(-4px);
     width: 7px; height: 7px;
@@ -495,7 +512,7 @@
   .social:hover .s-tip,
   .social:focus-visible .s-tip {
     opacity: 1;
-    transform: translateX(-50%) translateY(-2px);
+    transform: translateX(var(--tip-x, -50%)) translateY(-2px);
   }
   
   .social.is-dead {
@@ -515,7 +532,7 @@
   .social.is-dead:focus .s-tip-dead,
   .social.is-dead:focus-visible .s-tip-dead {
     opacity: 1;
-    transform: translateX(-50%) translateY(-2px);
+    transform: translateX(var(--tip-x, -50%)) translateY(-2px);
   }
   
   .s-tip-dead {
